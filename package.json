@@ -12,6 +12,7 @@
     "@heroui/react": "^2.8.10",
     "framer-motion": "^12.38.0",
     "next": "16.1.7",
+    "next-auth": "^5.0.0-beta.30",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
