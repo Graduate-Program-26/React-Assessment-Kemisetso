@@ -1,5 +1,5 @@
 
-import { signIn } from "@/auth";
+import { signIn } from "@/app/auth";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
