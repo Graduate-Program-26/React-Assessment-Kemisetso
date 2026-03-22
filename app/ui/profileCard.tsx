@@ -1,14 +1,14 @@
-'use client'
-import { Avatar, Card, CardBody } from "@heroui/react"
-import type { GitHubUser } from "../types/gitTypes"
+"use client";
+import { Avatar, Card, CardBody } from "@heroui/react";
+import type { GitHubUser } from "../types/gitTypes";
 
 interface ProfileCardProps {
-  profile: GitHubUser
+  profile: GitHubUser;
 }
 
 interface StatItemProps {
-  label: string
-  value: number
+  label: string;
+  value: number;
 }
 
 function StatItem({ label, value }: StatItemProps) {
@@ -19,14 +19,13 @@ function StatItem({ label, value }: StatItemProps) {
       </span>
       <span className="text-sm text-gray-500">{label}</span>
     </div>
-  )
+  );
 }
 
 export function ProfileCard({ profile }: ProfileCardProps) {
   return (
     <Card className="max-w-md mx-auto bg-purple-50 border border-purple-100 shadow-sm rounded-2xl">
       <CardBody className="flex flex-col items-center gap-5 p-8">
-
         <Avatar
           src={profile.avatar_url}
           alt={`${profile.login}'s GitHub avatar`}
@@ -72,8 +71,7 @@ export function ProfileCard({ profile }: ProfileCardProps) {
             <StatItem label="Repos" value={profile.public_repos} />
           </div>
         </div>
-
       </CardBody>
     </Card>
-  )
+  );
 }

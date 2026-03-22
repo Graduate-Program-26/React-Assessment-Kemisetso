@@ -4,14 +4,14 @@ import { getProfile } from "../lib/github";
 import { ProfileCard } from "../ui/profileCard";
 
 export default async function Page() {
-    const session = await auth()
+  const session = await auth();
 
   if (!session?.user) {
-    redirect("/")
+    redirect("/");
   }
 
-  const username = session.user.login
-  const profile = await getProfile(username)
+  const username = session.user.login;
+  const profile = await getProfile(username);
 
   return (
     <main className="min-h-screen p-8">
