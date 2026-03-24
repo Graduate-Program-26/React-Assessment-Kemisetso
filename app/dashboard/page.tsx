@@ -1,8 +1,9 @@
 import { auth } from '@/app/auth'
 import { redirect } from 'next/navigation'
-import { getProfile, getRepos } from '../lib/github'
+import { getEvents, getProfile, getRepos } from '../lib/github'
 import { ProfileCard } from '../ui/profileCard'
 import { TopRepos } from '../ui/topRepos'
+import { ActivityFeed } from '../ui/activityFeed'
 
 export default async function Page() {
   const session = await auth()
@@ -12,15 +13,17 @@ export default async function Page() {
   }
 
   const username = session.user.login
-  const [profile, repos] = await Promise.all([
+  const [profile, repos, events] = await Promise.all([
     getProfile(username),
     getRepos(username),
+    getEvents(username),
   ])
 
   return (
     <main className="min-h-screen p-8">
       <ProfileCard profile={profile} />
       <TopRepos repos={repos} />
+      <ActivityFeed events={events} />
     </main>
   )
 }
