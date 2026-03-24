@@ -1,3 +1,4 @@
+'use client'
 import { Card, CardBody, Skeleton } from '@heroui/react'
 
 export function ProfileCardSkeleton() {
