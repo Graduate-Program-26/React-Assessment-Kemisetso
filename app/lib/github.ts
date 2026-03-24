@@ -1,4 +1,4 @@
-import type { GitHubRepo, GitHubUser } from '../types/gitTypes'
+import type { GitHubEvent, GitHubRepo, GitHubUser } from '../types/gitTypes'
 
 const BASE_URL = 'https://api.github.com'
 
@@ -37,4 +37,13 @@ export async function getRepos(username: string): Promise<GitHubRepo[]> {
     console.error('Error fetching repos:', error)
     throw new Error('Failed to fetch GitHub repositories')
   }
+}
+
+export async function getEvents(username: string): Promise<GitHubEvent[]> {
+  const res = await fetch(`${BASE_URL}/users/${username}/events?per_page=30`, {
+    headers,
+  })
+  if (!res.ok) throw new Error(`Could not fetch events for: ${username}`)
+  const events = (await res.json()) as GitHubEvent[]
+  return events.slice(0, 10)
 }
