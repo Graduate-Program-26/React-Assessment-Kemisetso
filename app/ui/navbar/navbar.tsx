@@ -4,11 +4,10 @@ import { Avatar, Button } from '@heroui/react'
 import Link from 'next/link'
 
 interface NavbarProps {
-  userLogin: string | null
   onSignOut: () => Promise<void>
 }
 
-export function Navbar({ userLogin, onSignOut }: NavbarProps) {
+export function Navbar({ onSignOut }: NavbarProps) {
   return (
     <header className="w-full border-b border-purple-100 bg-white sticky top-0 z-10">
       <div className="max-w-5xl mx-auto px-8 py-3 flex items-center justify-between gap-4">

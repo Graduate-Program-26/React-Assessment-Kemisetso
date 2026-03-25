@@ -13,7 +13,7 @@ export function SearchSection() {
   const query = searchParams.get('query') ?? ''
 
   const [results, setResults] = useState<GitHubSearchUser[]>([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [fetchedQuery, setFetchedQuery] = useState('')
 
   const handleSearch = (term: string) => {
     const params = new URLSearchParams(searchParams)
@@ -26,18 +26,22 @@ export function SearchSection() {
   }
 
   useEffect(() => {
-    if (query.trim().length < 2) {
-      setResults([])
-      return
-    }
+    if (query.trim().length < 2) return
 
-    setIsLoading(true)
     fetch(`/api/search-users?q=${encodeURIComponent(query)}`)
       .then((res) => res.json())
-      .then((data) => setResults(data.items ?? []))
-      .catch(() => setResults([]))
-      .finally(() => setIsLoading(false))
+      .then((data) => {
+        setResults(data.items ?? [])
+        setFetchedQuery(query)
+      })
+      .catch(() => {
+        setResults([])
+        setFetchedQuery(query)
+      })
   }, [query])
+
+  const showResults = query.trim().length >= 2
+  const isLoading = showResults && fetchedQuery !== query
 
   return (
     <div className="flex flex-col gap-2">
@@ -64,13 +68,13 @@ export function SearchSection() {
         </p>
       )}
 
-      {!isLoading && results.length > 0 && (
+      {!isLoading && showResults && results.length > 0 && (
         <ul className="flex flex-col gap-1" aria-label="Search results">
           {results.map((user) => (
             <li key={user.id}>
               <Link
                 href={`/dashboard/${user.login}`}
-                className="flex items-center py-2 rounded-xl hover:bg-purple-50 "
+                className="flex items-center gap-3 py-2 rounded-xl hover:bg-purple-50"
                 onClick={() => setResults([])}
               >
                 <Image
@@ -89,9 +93,9 @@ export function SearchSection() {
         </ul>
       )}
 
-      {!isLoading && query.length >= 2 && results.length === 0 && (
+      {!isLoading && showResults && results.length === 0 && (
         <p className="text-xs text-gray-400 px-2">
-          No users found for "{query}"
+          No users found for &quot;{query}&quot;
         </p>
       )}
     </div>
