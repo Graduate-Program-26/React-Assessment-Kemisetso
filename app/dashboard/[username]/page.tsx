@@ -1,6 +1,7 @@
 import { auth } from '@/app/auth'
 import { getProfile, getRepos, getEvents } from '@/app/lib/github'
 import { ActivityFeed } from '@/app/ui/activityFeed'
+import { ContributionCalendar } from '@/app/ui/contributionCalender'
 import { ProfileCard } from '@/app/ui/profileCard'
 import { TopRepos } from '@/app/ui/topRepos'
 import { redirect } from 'next/navigation'
@@ -29,6 +30,7 @@ export default async function Page({ params }: PageProps) {
       <ProfileCard profile={profile} />
       <TopRepos repos={repos} />
       <ActivityFeed events={events} />
+      <ContributionCalendar username={username} />
     </main>
   )
 }
