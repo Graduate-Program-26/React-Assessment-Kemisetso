@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
   }
 
   const res = await fetch(
-    `https://api.github.com/search/users?q=${encodeURIComponent(query)}&per_page=6`,
+    `https://api.github.com/search/users?q=${encodeURIComponent(query)}&per_page=15`,
     {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,

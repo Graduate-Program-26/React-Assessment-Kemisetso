@@ -63,3 +63,15 @@ export type GitHubEvent = GitHubEventPayload & {
   repo: GitHubEventRepo
   created_at: string
 }
+
+export interface GitHubSearchUser {
+  id: number
+  login: string
+  avatar_url: string
+  html_url: string
+}
+
+export interface GitHubSearchResponse {
+  total_count: number
+  items: GitHubSearchUser[]
+}

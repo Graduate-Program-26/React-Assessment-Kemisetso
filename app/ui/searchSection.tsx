@@ -70,7 +70,7 @@ export function SearchSection() {
             <li key={user.id}>
               <Link
                 href={`/dashboard/${user.login}`}
-                className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-purple-50 transition-colors"
+                className="flex items-center py-2 rounded-xl hover:bg-purple-50 "
                 onClick={() => setResults([])}
               >
                 <Image

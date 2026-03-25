@@ -11,7 +11,6 @@ export async function NavbarWrapper() {
 
   return (
     <Navbar
-      userImage={session?.user?.image ?? null}
       userLogin={session?.user?.login ?? null}
       onSignOut={handleSignOut}
     />

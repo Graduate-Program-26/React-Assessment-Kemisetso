@@ -1,16 +1,14 @@
 'use client'
-
 import { Avatar, Button } from '@heroui/react'
-import { SearchForm } from '../searchForm'
+
 import Link from 'next/link'
 
 interface NavbarProps {
-  userImage: string | null
   userLogin: string | null
   onSignOut: () => Promise<void>
 }
 
-export function Navbar({ userImage, userLogin, onSignOut }: NavbarProps) {
+export function Navbar({ userLogin, onSignOut }: NavbarProps) {
   return (
     <header className="w-full border-b border-purple-100 bg-white sticky top-0 z-10">
       <div className="max-w-5xl mx-auto px-8 py-3 flex items-center justify-between gap-4">
@@ -21,10 +19,6 @@ export function Navbar({ userImage, userLogin, onSignOut }: NavbarProps) {
         >
           GitDash
         </Link>
-
-        <div className="flex-1 max-w-sm">
-          <SearchForm />
-        </div>
 
         <form action={onSignOut}>
           <Button
