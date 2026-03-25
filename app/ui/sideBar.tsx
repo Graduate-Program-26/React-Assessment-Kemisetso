@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { SearchSection } from './searchSection'
+import { Suspense } from 'react'
 
 export function Sidebar() {
   return (
@@ -14,7 +15,9 @@ export function Sidebar() {
 
       <div>
         <p className="text-xs font-semibold text-gray-400 ">Search</p>
-        <SearchSection />
+        <Suspense fallback={<p>Loading feed...</p>}>
+          <SearchSection />
+        </Suspense>
       </div>
 
       <nav aria-label="Dashboard navigation">
