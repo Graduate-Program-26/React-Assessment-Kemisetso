@@ -1,5 +1,5 @@
 'use client'
-import { Card, CardBody, Chip } from '@heroui/react'
+import { Card, CardBody } from '@heroui/react'
 import type { GitHubRepo } from '../types/gitTypes'
 
 interface RepoCardProps {
