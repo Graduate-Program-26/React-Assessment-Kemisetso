@@ -1,6 +1,16 @@
 'use client'
-import { GitHubCalendar } from 'react-github-calendar'
 
+import dynamic from 'next/dynamic'
+
+const GitHubCalendar = dynamic(
+  () => import('react-github-calendar').then((mod) => mod.GitHubCalendar),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-32 animate-pulse bg-purple-50 rounded-xl" />
+    ),
+  },
+)
 interface ContributionCalendarProps {
   username: string
 }
