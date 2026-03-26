@@ -18,19 +18,20 @@ export default async function Page({ params }: PageProps) {
   }
 
   const { username } = await params
+  
+    const [profile, repos, events] = await Promise.all([
+      getProfile(username),
+      getRepos(username),
+      getEvents(username),
+    ])
 
-  const [profile, repos, events] = await Promise.all([
-    getProfile(username),
-    getRepos(username),
-    getEvents(username),
-  ])
-
-  return (
-    <main className="p-8 max-w-5xl mx-auto flex flex-col gap-10">
-      <ProfileCard profile={profile} />
-      <TopRepos repos={repos} />
-      <ActivityFeed events={events} />
-      <ContributionCalendar username={username} />
-    </main>
-  )
+    return (
+      <main className="p-8 max-w-5xl mx-auto flex flex-col gap-10">
+        <ProfileCard profile={profile} />
+        <TopRepos repos={repos} />
+        <ActivityFeed events={events} />
+        <ContributionCalendar username={username} />
+      </main>
+    )
+ 
 }
