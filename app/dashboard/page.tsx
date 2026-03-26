@@ -4,6 +4,7 @@ import { getEvents, getProfile, getRepos } from '../lib/github'
 import { ProfileCard } from '../ui/profileCard'
 import { TopRepos } from '../ui/topRepos'
 import { ActivityFeed } from '../ui/activityFeed'
+import { ContributionCalendar } from '../ui/contributionCalender'
 
 export default async function Page() {
   const session = await auth()
@@ -24,6 +25,7 @@ export default async function Page() {
       <ProfileCard profile={profile} />
       <TopRepos repos={repos} />
       <ActivityFeed events={events} />
+      <ContributionCalendar username={username} />
     </main>
   )
 }
