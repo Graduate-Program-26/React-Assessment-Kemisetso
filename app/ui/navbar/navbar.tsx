@@ -2,6 +2,7 @@
 import { Button } from '@heroui/react'
 
 import Link from 'next/link'
+import { ThemeToggle } from '../themeToggle'
 
 interface NavbarProps {
   userLogin: string | null
@@ -20,16 +21,19 @@ export function Navbar({ userLogin, onSignOut }: NavbarProps) {
           GitDash
         </Link>
 
-        <form action={onSignOut}>
-          <Button
-            type="submit"
-            size="sm"
-            variant="bordered"
-            className="border-purple-200 text-purple-700 hover:border-purple-400"
-          >
-            Sign out
-          </Button>
-        </form>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <form action={onSignOut}>
+            <Button
+              type="submit"
+              size="sm"
+              variant="bordered"
+              className="border-purple-200 text-purple-700 hover:border-purple-400"
+            >
+              Sign out
+            </Button>
+          </form>
+        </div>
       </div>
     </header>
   )
