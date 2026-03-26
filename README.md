@@ -11,6 +11,14 @@ A modern **Next.js** web application built with TypeScript, Tailwind CSS, and th
 
 ---
 
+## Screenshots
+
+![App Screenshot](public/picture1.png)
+![App screenshot](public/picture2.png)
+![App screenshot](public/picture3.png)
+
+---
+
 ## Features
 
 - **Next.js 15** with App Router
@@ -126,7 +134,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 The project is optimized for deployment on **Vercel**:
 
