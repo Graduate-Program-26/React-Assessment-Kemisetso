@@ -11,11 +11,11 @@ A modern **Next.js** web application built with TypeScript, Tailwind CSS, and th
 
 ---
 
-## ✨ Features
+## Features
 
 - **Next.js 15** with App Router
 - **TypeScript** for type safety
-- **Tailwind CSS** for styling
+- **Tailwind CSS and HeroUI** for styling
 - Modern UI components in `/app/ui`
 - Authentication logic (`auth.ts`)
 - Dashboard route (`/dashboard`)
@@ -27,7 +27,7 @@ A modern **Next.js** web application built with TypeScript, Tailwind CSS, and th
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js (App Router)
 - **Language**: TypeScript
@@ -35,11 +35,37 @@ A modern **Next.js** web application built with TypeScript, Tailwind CSS, and th
 - **Font**: Geist (optimized)
 - **Linting/Formatting**: ESLint, Prettier
 - **Git Hooks**: Husky
-- **Package Manager**: npm / Bun (bun.lock present)
+- **Package Manager**: npm
 
 ---
 
-## 📁 Project Structure
+## Links to docs and extras used
+
+- https://authjs.dev/reference/nextjs
+- https://heroui.com/docs/react/components/chip
+- https://nextjs.org/docs/app/getting-started/proxy
+- https://nextjs.org/learn/dashboard-app/adding-authentication
+- https://react-icons.github.io/react-icons/search/#q=github
+- https://vercel.com/docs/git
+- https://next-auth.js.org/getting-started/typescript
+- https://www.npmjs.com/package/next-themes
+- https://stackoverflow.com/questions/27732209/turning-off-an-eslint-rule-for-a-specific-line
+- https://www.npmjs.com/package/react-github-calendar
+- https://typicode.github.io/husky/get-started.html
+- https://auth0.com/docs/secure/tokens/access-tokens
+- https://nextjs.org/docs/pages/guides/authentication
+- https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app
+- https://authjs.dev/getting-started/providers/github
+- https://docs.github.com/en/rest/users
+- https://docs.github.com/en/rest/repos/repos
+- https://docs.github.com/en/rest/activity/events
+- https://nextjs.org/docs/app/building-your-application/authentication
+- https://vercel.com/docs/deployments
+- https://docs.github.com/en/rest/search/search?apiVersion=2026-03-10
+
+---
+
+## Project Structure
 
 ```bash
 ├── app/
@@ -56,7 +82,6 @@ A modern **Next.js** web application built with TypeScript, Tailwind CSS, and th
 │   └── not-found.tsx     # Custom 404 page
 ├── public/
 │   └── 404.svg           # Custom 404 illustration
-├── components/           # (if any top-level components)
 ├── next.config.ts
 ├── tsconfig.json
 ├── tailwind.config.js
@@ -66,7 +91,7 @@ A modern **Next.js** web application built with TypeScript, Tailwind CSS, and th
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -103,7 +128,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## 🚀 Deployment
 
-The project is optimized for deployment on **Vercel** (recommended):
+The project is optimized for deployment on **Vercel**:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FGraduate-Program-26%2FReact-Assessment-Kemisetso&branch=development)
 
