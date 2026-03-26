@@ -26,7 +26,6 @@ export default async function Page() {
       <TopRepos repos={repos} />
       <ActivityFeed events={events} />
       <ContributionCalendar username={username} />
-      {/**causing a hydratio fail error, TO DO, FIX  */}
     </main>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 import { Card, CardBody } from '@heroui/react'
 import type { GitHubRepo } from '../types/gitTypes'
+import { FiStar } from 'react-icons/fi'
 
 interface RepoCardProps {
   repo: GitHubRepo
@@ -56,10 +57,11 @@ export function RepoCard({ repo }: RepoCardProps) {
                 </span>
               )}
               <span
-                className="text-xs text-gray-400"
+                className="text-xs text-gray-400 flex items-center gap-1"
                 aria-label={`${repo.stargazers_count} stars`}
               >
-                ⭐ {repo.stargazers_count}
+                <FiStar className="text-yellow-400 text-[13px] " />{' '}
+                {repo.stargazers_count}
               </span>
             </div>
             <span className="text-xs text-gray-400">
