@@ -5,7 +5,14 @@ import { ThemeProvider } from 'next-themes'
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <HeroUIProvider>
-      <ThemeProvider>{children}</ThemeProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+      </ThemeProvider>
     </HeroUIProvider>
   )
 }
